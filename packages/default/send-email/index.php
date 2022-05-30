@@ -83,8 +83,7 @@ function send(array $args): array
     }
 
     // Render tempalates
-    $rawJSON = base64_decode($args['variables']);
-    $variables = json_decode($rawJSON);
+    $variables = (array)json_decode(base64_decode($args['variables']));
 
     $html = $twig->render($templateNameHTML, $variables);
     $txt = $twig->render($templateNameTXT, $variables);
