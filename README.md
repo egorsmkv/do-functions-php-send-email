@@ -1,6 +1,6 @@
 # `do-functions-php-send-email`
 
-This function gives you the ability to send email messages via any STMP server using own predefined HTML/TXT templates.
+This function gives you the ability to send email messages via any SMTP server using own predefined HTML/TXT templates.
 
 ## Installation
 
