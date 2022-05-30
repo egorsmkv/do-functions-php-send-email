@@ -49,7 +49,7 @@ function main(array $args) : array
         return wrap(['error' => 'Please supply template argument.']);
     }
 
-    if (!isset($args['variables'])) {
+    if (empty($args['variables'])) {
         return wrap(['error' => 'Please supply variables argument.']);
     }
     if (!is_array($args['variables'])) {
