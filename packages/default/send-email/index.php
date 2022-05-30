@@ -67,7 +67,7 @@ function wrap(array $args) : array
 function send(array $args): array
 {
     // Templates part
-    $loader = new \Twig\Loader\FilesystemLoader(__DIR__ . './templates');
+    $loader = new \Twig\Loader\FilesystemLoader(__DIR__ . '/templates');
     $twig = new \Twig\Environment($loader, [
         'cache' => '/tmp',
     ]);
