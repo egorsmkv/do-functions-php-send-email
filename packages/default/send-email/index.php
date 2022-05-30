@@ -10,10 +10,7 @@ function main(array $args) : array
     $number = (int)($args['number']);
     $words = (new NumberToWords)->toWords($number);
  
-    return [
-        'body' => $words,
-        'version' => 2,
-    ];
+    return wrap(['words' => $words, 'version' => 2]);
 }
 
 function wrap(array $args) : array
