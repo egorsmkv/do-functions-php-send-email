@@ -12,6 +12,7 @@ function main(array $args) : array
  
     return [
         'body' => $words,
+        'version' => 2,
     ];
 }
 

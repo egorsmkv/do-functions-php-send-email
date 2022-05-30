@@ -5,10 +5,10 @@ functions:
 - github:
     branch: master
     deploy_on_push: true
-    repo: digitalocean/sample-functions-php-numberstowords
-  name: numbertowords-api
+    repo: egorsmkv/do-functions-php-send-email
+  name: send_email-api
   routes:
   - path: /
   source_dir: /
-name: numberstowords
+name: send_email
 region: blr
