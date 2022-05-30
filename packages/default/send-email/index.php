@@ -75,10 +75,10 @@ function send(array $args): array
     $templateNameHTML = $args['template'] . '.html';
     $templateNameTXT = $args['template'] . '.txt';
 
-    if (!file_exists(__DIR__ . './templates/' . $templateNameHTML)) {
+    if (!file_exists(__DIR__ . '/templates/' . $templateNameHTML)) {
         return ['status' => ERROR, 'result' => 'template (HTML) does not exist'];
     }
-    if (!file_exists(__DIR__ . './templates/' . $templateNameTXT)) {
+    if (!file_exists(__DIR__ . '/templates/' . $templateNameTXT)) {
         return ['status' => ERROR, 'result' => 'template (TXT) does not exist'];
     }
 

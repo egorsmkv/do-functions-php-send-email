@@ -1,7 +1,7 @@
 <?php
 
 $data = [
-    'var1' => 'x',
+    'name' => 'Yehor',
 ];
 
 $encoded = base64_encode(json_encode($data));
