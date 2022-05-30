@@ -49,11 +49,8 @@ function main(array $args) : array
         return wrap(['error' => 'Please supply template argument.']);
     }
 
-    if (empty($args['variables'])) {
+    if (!isset($args['variables'])) {
         return wrap(['error' => 'Please supply variables argument.']);
-    }
-    if (!is_array($args['variables'])) {
-        return wrap(['error' => 'Please supply variables argument as an array.']);
     }
 
     // Send the message
@@ -86,8 +83,11 @@ function send(array $args): array
     }
 
     // Render tempalates
-    $html = $twig->render($templateNameHTML, $args['variables']);
-    $txt = $twig->render($templateNameTXT, $args['variables']);
+    $rawJSON = base64_decode($args['variables']);
+    $variables = json_decode($rawJSON);
+
+    $html = $twig->render($templateNameHTML, $variables);
+    $txt = $twig->render($templateNameTXT, $variables);
 
     // Email part
     $transport = (new Swift_SmtpTransport($args['smtp_server'], $args['smtp_port']))
